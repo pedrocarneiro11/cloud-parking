@@ -4,6 +4,7 @@ import one.digitalinnovation.parking.controller.dto.ParkingDTO;
 import one.digitalinnovation.parking.controller.mapper.ParkingMapper;
 import one.digitalinnovation.parking.model.Parking;
 import one.digitalinnovation.parking.service.ParkingService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,10 +24,10 @@ public class ParkingController {
     }
 
     @GetMapping
-    public List<ParkingDTO> findAll() {
+    public ResponseEntity<List<ParkingDTO>> findAll() {
         List<Parking> parkingList = parkingService.findAll();
         List<ParkingDTO> result = parkingMapper.toParkingDTOList(parkingList);
-        return result;
+        return ResponseEntity.ok(result);
     }
 
 }
