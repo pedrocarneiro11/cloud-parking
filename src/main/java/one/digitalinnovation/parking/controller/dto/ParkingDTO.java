@@ -1,6 +1,10 @@
 package one.digitalinnovation.parking.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.time.LocalDateTime;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 
 public class ParkingDTO {
     private String id;
@@ -10,7 +14,7 @@ public class ParkingDTO {
     private String color;
     private LocalDateTime entryDate;
     private LocalDateTime exitDate;
-    private double bill;
+    private Double bill;
 
     public String getId() {
         return id;
@@ -68,7 +72,7 @@ public class ParkingDTO {
         this.exitDate = exitDate;
     }
 
-    public double getBill() {
+    public Double getBill() {
         return bill;
     }
 
