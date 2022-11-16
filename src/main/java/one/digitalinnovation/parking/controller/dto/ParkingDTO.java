@@ -1,13 +1,13 @@
 package one.digitalinnovation.parking.controller.dto;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.time.LocalDateTime;
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
-
 public class ParkingDTO {
+
     private String id;
     private String license;
     private String state;
@@ -79,7 +79,7 @@ public class ParkingDTO {
         return bill;
     }
 
-    public void setBill(double bill) {
+    public void setBill(Double bill) {
         this.bill = bill;
     }
 }
